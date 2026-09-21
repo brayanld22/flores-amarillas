@@ -22,6 +22,9 @@ const noteText =
 const noteNumber =
     document.getElementById("noteNumber");
 
+const notePhoto =
+    document.getElementById("notePhoto");
+
 const typingCursor =
     document.getElementById("typingCursor");
 
@@ -223,7 +226,7 @@ startShootingStars();
 
 
 /* =========================
-   MENSAJES
+   MENSAJES + FOTOS
 ========================= */
 
 const notes = {
@@ -233,7 +236,10 @@ const notes = {
             "Una flor para ti 🌻",
 
         text:
-            "Te amo por tu forma de ser, eres única y lo supe desde que nos vimos y fuimos a aquel mirador."
+            "Te amo por tu forma de ser, eres única y lo supe desde que nos vimos y fuimos a aquel mirador.",
+
+        image:
+            "fotos/foto1.jpg.jpeg"
     },
 
 
@@ -242,7 +248,10 @@ const notes = {
             "Lo que vendrá 💛",
 
         text:
-            "Sé que no son las rosas que querías, pero pasarán los malos momentos y, a la larga, espero estabilizarnos para poder hacer todo lo planeado."
+            "Sé que no son las rosas que querías, pero pasarán los malos momentos y, a la larga, espero estabilizarnos para poder hacer todo lo planeado.",
+
+        image:
+            "fotos/foto2.jpg.jpeg"
     },
 
 
@@ -251,7 +260,10 @@ const notes = {
             "Por todo lo vivido ✨",
 
         text:
-            "Te amo por cada tiempo dedicado, por los altos y bajos que han pasado."
+            "Te amo por cada tiempo dedicado, por los altos y bajos que han pasado.",
+
+        image:
+            "fotos/foto3.jpg.jpeg"
     },
 
 
@@ -260,7 +272,10 @@ const notes = {
             "Lo que puedo darte 💛",
 
         text:
-            "No es la gran cosa lo que te brindo, pero espero sea lo necesario para que no me dejes de querer."
+            "No es la gran cosa lo que te brindo, pero espero sea lo necesario para que no me dejes de querer.",
+
+        image:
+            "fotos/foto4.jpg.jpeg"
     },
 
 
@@ -269,7 +284,10 @@ const notes = {
             "Nuestros caminos 🌌",
 
         text:
-            "Entre millones de personas, millones de estrellas y millones de historias, me alegra que nuestros caminos se hayan encontrado."
+            "Entre millones de personas, millones de estrellas y millones de historias, me alegra que nuestros caminos se hayan encontrado.",
+
+        image:
+            "fotos/foto5.jpg.jpeg"
     },
 
 
@@ -278,7 +296,10 @@ const notes = {
             "Un pequeño motivo 🌻",
 
         text:
-            "Cada flor que ves aquí representa un pequeño motivo por el que pienso en ti."
+            "Cada flor que ves aquí representa un pequeño motivo por el que pienso en ti.",
+
+        image:
+            "fotos/foto6.jpg.jpeg"
     },
 
 
@@ -287,7 +308,10 @@ const notes = {
             "Tu sonrisa 💛",
 
         text:
-            "Hay días grises que cambian completamente cuando apareces tú. Tu sonrisa tiene esa forma especial de iluminarlo todo."
+            "Hay días grises que cambian completamente cuando apareces tú. Tu sonrisa tiene esa forma especial de iluminarlo todo.",
+
+        image:
+            "fotos/foto7.jpg.jpeg"
     },
 
 
@@ -296,7 +320,10 @@ const notes = {
             "Un momento contigo ✨",
 
         text:
-            "Si pudiera guardar un momento para repetirlo una y otra vez, elegiría uno en el que estuvieras sonriendo conmigo."
+            "Si pudiera guardar un momento para repetirlo una y otra vez, elegiría uno en el que estuvieras sonriendo conmigo.",
+
+        image:
+            "fotos/foto8.jpg.jpeg"
     },
 
 
@@ -305,7 +332,10 @@ const notes = {
             "Quiero más tiempo contigo 💛",
 
         text:
-            "Quisiera pasar tanto tiempo contigo, no tener que despedirme por días, pero confío en el proceso."
+            "Quisiera pasar tanto tiempo contigo, no tener que despedirme por días, pero confío en el proceso.",
+
+        image:
+            "fotos/foto9.jpg.jpeg"
     },
 
 
@@ -314,7 +344,10 @@ const notes = {
             "Lo que viene 🌟",
 
         text:
-            "Se vienen cosas grandes y lo más grande que va pasando es conocerte, Henn. I LOVE YOU."
+            "Se vienen cosas grandes y lo más grande que va pasando es conocerte, Henn. I LOVE YOU.",
+
+        image:
+            "fotos/foto10.jpg.jpeg"
     },
 
 
@@ -323,7 +356,10 @@ const notes = {
             "¿Por qué 11? 🌻",
 
         text:
-            "Te preguntarás por qué 11 rosas. Prestando atención a tus palabras, 11 es el número que más usas. Y aparte, para que no veas que esto no es un simple archivo descargado, sino algo creado especialmente para ti."
+            "Te preguntarás por qué 11 rosas. Prestando atención a tus palabras, 11 es el número que más usas. Y aparte, para que no veas que esto no es un simple archivo descargado, sino algo creado especialmente para ti.",
+
+        image:
+            "fotos/foto11.jpg.jpeg"
     },
 
 
@@ -597,6 +633,43 @@ function openNote(
         "";
 
 
+    /*
+     * FOTO
+     *
+     * Las flores 1-11 tienen
+     * una fotografía propia.
+     *
+     * La carta central no tiene
+     * fotografía.
+     */
+
+    if (
+        note.image
+    ) {
+
+        notePhoto.src =
+            note.image;
+
+        notePhoto.alt =
+            `Foto de nosotros - Flor ${number}`;
+
+        notePhoto.style.display =
+            "block";
+
+    } else {
+
+        notePhoto.src =
+            "";
+
+        notePhoto.alt =
+            "";
+
+        notePhoto.style.display =
+            "none";
+
+    }
+
+
     typingCursor.style.display =
         "inline-block";
 
@@ -754,6 +827,13 @@ flowers.forEach(
 
                         noteText.textContent =
                             `Primero descubre la flor número ${nextFlower}. Cada una tiene algo que quiero decirte.`;
+
+
+                        notePhoto.src =
+                            "";
+
+                        notePhoto.style.display =
+                            "none";
 
 
                         typingCursor.style.display =
@@ -1043,6 +1123,13 @@ centralFlower.addEventListener(
 
             noteText.textContent =
                 `Primero tienes que descubrir las 11 flores. Te falta la número ${nextFlower}.`;
+
+
+            notePhoto.src =
+                "";
+
+            notePhoto.style.display =
+                "none";
 
 
             typingCursor.style.display =
