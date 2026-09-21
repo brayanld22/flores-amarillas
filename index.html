@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Flores Amarillas 💛</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+<main class="galaxy">
+
+    <!-- ESTRELLAS -->
+    <div class="stars"></div>
+
+
+    <!-- ESTRELLAS FUGACES -->
+    <div
+        class="shooting-stars"
+        id="shootingStars"
+    ></div>
+
+
+    <!-- PÉTALOS -->
+    <div
+        class="petals"
+        id="petals"
+    ></div>
+
+
+    <!-- CORAZONES -->
+    <div
+        class="hearts"
+        id="hearts"
+    ></div>
+
+
+    <!-- LUZ DEL MOUSE -->
+    <div
+        class="mouse-light"
+        id="mouseLight"
+    ></div>
+
+
+    <!-- =========================
+         MÚSICA
+    ========================== -->
+
+    <audio
+        id="backgroundMusic"
+        src="musica.mp3.mp3"
+        loop
+        preload="auto"
+    ></audio>
+
+
+    <button
+        class="music-button"
+        id="musicButton"
+    >
+        🎵
+        <span id="musicText">
+            Música
+        </span>
+    </button>
+
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section
+        class="intro"
+        id="intro"
+    >
+
+        <p class="small-text">
+            TENGO ALGO PARA TI...
+        </p>
+
+
+        <h1>
+            Flores Amarillas
+        </h1>
+
+
+        <p class="subtitle">
+            Una pequeña galaxia hecha especialmente para ti 💛
+        </p>
+
+
+        <button id="enterBtn">
+            Entrar ✨
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         GALAXIA
+    ========================== -->
+
+    <section
+        class="flower-space"
+        id="flowerSpace"
+    >
+
+        <div
+            class="journey-counter"
+            id="journeyCounter"
+        >
+            1 / 11
+        </div>
+
+
+        <div
+            class="journey-hint"
+            id="journeyHint"
+        >
+            Comienza por la flor número 1 🌻
+        </div>
+
+
+        <!-- CAMINO -->
+
+        <svg
+            class="flower-path"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+        >
+
+            <defs>
+
+                <filter id="pathGlow">
+
+                    <feGaussianBlur
+                        stdDeviation="1.2"
+                        result="blur"
+                    />
+
+                    <feMerge>
+
+                        <feMergeNode in="blur"></feMergeNode>
+
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+
+                    </feMerge>
+
+                </filter>
+
+            </defs>
+
+
+            <polyline
+                class="path-line"
+                points="
+                    9,18
+                    22,10
+                    38,17
+                    57,9
+                    78,17
+                    91,31
+                    82,48
+                    91,65
+                    77,80
+                    57,89
+                    35,82
+                "
+                filter="url(#pathGlow)"
+            />
+
+        </svg>
+
+
+        <!-- FLORES -->
+
+        <button class="flower flower-1 locked" data-note="1">
+            <span class="flower-number">1</span>
+            🌻
+        </button>
+
+
+        <button class="flower flower-2 locked" data-note="2">
+            <span class="flower-number">2</span>
+            🌻
+        </button>
+
+
+        <button class="flower flower-3 locked" data-note="3">
+            <span class="flower-number">3</span>
+            🌻
+        </button>
+
+
+        <button class="flower flower-4 locked" data-note="4">
+            <span class="flower-number">4</span>
+            🌻
+        </button>
+
+
+        <button class="flower flower-5 locked" data-note="5">
+            <span class="flower-number">5</span>
+            🌻
+        </button>
+
+
+        <button class="flower flower-6 locked" data-note="6">
+            <span class="flower-number">6</span>
+            🌻
+        </button>
+
+
+        <button class="flower flower-7 locked" data-note="7">
+            <span class="flower-number">7</span>
+            🌻
+        </button>
+
+
+        <button class="flower flower-8 locked" data-note="8">
+            <span class="flower-number">8</span>
+            🌻
+        </button>
+
+
+        <button class="flower flower-9 locked" data-note="9">
+            <span class="flower-number">9</span>
+            🌻
+        </button>
+
+
+        <button class="flower flower-10 locked" data-note="10">
+            <span class="flower-number">10</span>
+            🌻
+        </button>
+
+
+        <button class="flower flower-11 locked" data-note="11">
+            <span class="flower-number">11</span>
+            🌻
+        </button>
+
+
+        <!-- RAMO CENTRAL -->
+
+        <button
+            class="central-flower locked-central"
+            id="centralFlower"
+        >
+
+            <span class="central-glow"></span>
+
+
+            <div class="love-title">
+                TE AMO HENNELLY
+            </div>
+
+
+            <div class="bouquet">
+
+                <span class="flower-center flower-a">🌻</span>
+                <span class="flower-center flower-b">🌻</span>
+                <span class="flower-center flower-c">🌻</span>
+                <span class="flower-center flower-d">🌻</span>
+                <span class="flower-center flower-e">🌻</span>
+                <span class="flower-center flower-f">🌻</span>
+                <span class="flower-center flower-g">🌻</span>
+
+                <span class="bouquet-ribbon">
+                    🎀
+                </span>
+
+            </div>
+
+
+            <span class="click-text">
+                Para ti 💛
+            </span>
+
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         CARTA
+    ========================== -->
+
+    <div
+        class="note-container"
+        id="noteContainer"
+    >
+
+        <div class="note">
+
+            <button
+                class="close-note"
+                id="closeNote"
+            >
+                ×
+            </button>
+
+
+            <div class="note-flower">
+                🌻
+            </div>
+
+
+            <div
+                class="note-number"
+                id="noteNumber"
+            >
+                Flor 1
+            </div>
+
+
+            <h2 id="noteTitle">
+                Para ti
+            </h2>
+
+
+            <p id="noteText"></p>
+
+
+            <div
+                class="typing-cursor"
+                id="typingCursor"
+            >
+                |
+            </div>
+
+
+            <div class="note-decoration">
+                ✦ 💛 ✦
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         GRAN FINAL
+    ========================== -->
+
+    <div
+        class="final-container"
+        id="finalContainer"
+    >
+
+        <div class="final-content">
+
+            <div class="final-stars">
+                ✦ ✧ ✦
+            </div>
+
+
+            <p class="final-small">
+                LLEGASTE HASTA EL FINAL...
+            </p>
+
+
+            <h2>
+                HENNELLY
+            </h2>
+
+
+            <p class="final-question">
+                Y si llegaste hasta aquí...
+            </p>
+
+
+            <button
+                class="secret-button"
+                id="secretButton"
+            >
+                Abrir ❤️
+            </button>
+
+
+            <div
+                class="secret-message"
+                id="secretMessage"
+            >
+
+                <div class="secret-flower">
+                    🌻
+                </div>
+
+
+                <h3>
+                    TE AMO
+                </h3>
+
+
+                <p>
+                    No sé qué nos depare el futuro,
+                    pero sí sé que quiero seguir
+                    conociéndote, compartiendo
+                    momentos contigo y viendo
+                    hasta dónde puede llegar
+                    todo esto.
+                </p>
+
+
+                <p class="final-love">
+                    I LOVE YOU, HENN 💛
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
